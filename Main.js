@@ -24,3 +24,18 @@ window.addEventListener("scroll", function () {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach((card) => {
+        card.addEventListener("mouseenter", function () {
+            // Xóa class 'hovered' khỏi tất cả thẻ khác
+            cards.forEach(c => c.classList.remove("hovered"));
+            
+            // Thêm hiệu ứng hover vào thẻ hiện tại
+            card.classList.add("hovered");
+        });
+    });
+});
+
+
