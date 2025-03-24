@@ -24,16 +24,17 @@ window.addEventListener("scroll", function () {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const cards = document.querySelectorAll(".card");
+const cards = document.querySelectorAll(".series_Home .container .cards .card");
 
-    cards.forEach((card) => {
-        card.addEventListener("mouseenter", function () {
-            // Xóa class 'hovered' khỏi tất cả thẻ khác
-            cards.forEach(c => c.classList.remove("hovered"));
-            
-            // Thêm hiệu ứng hover vào thẻ hiện tại
-            card.classList.add("hovered");
+cards.forEach((card, index) => {
+    card.addEventListener("mouseenter", () => {
+        cards.forEach((c, i) => {
+            let distance = Math.abs(i - index); // Khoảng cách từ thẻ được hover
+            let scaleValue = 1.2 - (distance * 0.1); // To nhất ở thẻ hover, giảm dần
+            let zIndexValue = 10 - distance; // Thẻ hover có z-index cao nhất
+
+            c.style.transform = `scale(${scaleValue})`;
+            c.style.zIndex = zIndexValue;
         });
     });
 });

@@ -18,16 +18,24 @@ body {
     height: 12px;
 }
 
-.space_80 {
-    height: 80px;
-}
-
 .space_32 {
     height: 32px;
 }
 
+.space_56 {
+    height: 56px;
+}
+
+.space_80 {
+    height: 80px;
+}
+
 .space_120 {
     height: 120px;
+}
+
+.space_240 {
+    height: 240px;
 }
 
 .header {
@@ -178,16 +186,16 @@ body {
 
 .container {
     display: flex;
-    gap: 20px;
+    gap: 2rem;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 0 162px;
+    padding: 0 80px;
 }
 
 .card {
     position: relative;
     flex: 1;
-    height: 400px;
+    height: 480px;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -233,6 +241,7 @@ body {
 
 .container2_Home .container {
     display: flex;
+    align-items: center;
     justify-content: space-between; /* Giãn cách đều */
     flex-wrap: nowrap; /* Không cho xuống dòng */
     width: 100%;
@@ -245,55 +254,68 @@ body {
 }
 
 .container2_Home .container .card_item .card_img {
-    height: 220px;
+    height: 260px;
     overflow: hidden;
     border-radius: 10px;
 }
 
-.container2_Home .container .card_item img {
+.container2_Home .container .card_item .img_item{
     width: 100%;
-    height: 220px;
+    height: 260px;
     border-radius: 10px;
     object-fit: cover;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.5s ease-in-out;
 }
 
-.container2_Home .container .card_item:hover img {
+.container2_Home .container .card_item:hover .img_item {
     transform: scale(1.1);
     filter: brightness(1.08) ;
 }
 
 .container2_Home .card_item h3 {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 30px;
+    font-weight: lighter;
     margin: 10px 0;
 }
 
 .container2_Home .card_item p {
-    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
     color: #555;
     line-height: 1.5;
 }
 
-.container2_Home .tags {
-    margin-top: 10px;
-    font-size: 13px;
+.tags {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Khoảng cách giữa các phần tử */
+    font-size: 16px;
     color: #666;
+    margin-top: 10px;
 }
 
-.container2_Home .tags span {
-    background: #6d28d9;
-    color: white;
-    padding: 5px 8px;
-    border-radius: 5px;
-    font-size: 12px;
-    margin-right: 5px;
+.tags img {
+    width: 16px;
+    height: 16px;
+}
+
+.tags .tag_logo {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #581192;
+    font-weight: 500;
+}
+
+.tags span {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 
 /* Banner2_Home */
 .banner2_Home {
-    padding: 0 162px;
+    padding: 0 80px;
     display: flex; /* Căn giữa ảnh */
     justify-content: center; /* Canh giữa theo chiều ngang */
     align-items: center; /* Canh giữa theo chiều dọc */
@@ -308,10 +330,9 @@ body {
 
 /* Series */
 .series_Home {
-    width: 100%;
+    width: 70%;
     margin: auto;
     text-align: center;
-    padding: 0 162px;
 }
 
 .series_Home .container {
@@ -338,7 +359,10 @@ body {
     justify-content: center;
     position: relative;
     height: 454px;
-}
+    width: 100%; /* Định rõ chiều rộng */
+    left: 50%;
+    transform: translateX(-17%);
+  }
 
 .series_Home .container .cards .card {
     width: 294px;
@@ -351,11 +375,11 @@ body {
 }
 
 /* Vị trí chồng các thẻ */
-.series_Home .container .cards .card:nth-child(1) { left: 0px; z-index: 1; }
-.series_Home .container .cards .card:nth-child(2) { left: 120px; z-index: 2; }
-.series_Home .container .cards .card:nth-child(3) { left: 240px; z-index: 3; }
-.series_Home .container .cards .card:nth-child(4) { left: 360px; z-index: 4; }
-.series_Home .container .cards .card:nth-child(5) { left: 480px; z-index: 5; }
+.series_Home .container .cards .card:nth-child(1) { left: -240px; z-index: 1; }
+.series_Home .container .cards .card:nth-child(2) { left: -120px; z-index: 2; }
+.series_Home .container .cards .card:nth-child(3) { left: 0px; z-index: 3; }
+.series_Home .container .cards .card:nth-child(4) { left: 120px; z-index: 4; }
+.series_Home .container .cards .card:nth-child(5) { left: 240px; z-index: 5; }
 
 /* Hiệu ứng khi hover */
 .series_Home .container .cards .card.hovered {
@@ -370,20 +394,179 @@ body {
     font-weight: lighter;
     padding: 8px 15px;
     background-color: rgb(243 230 255);
-    font-weight: bold;
+    font-weight: lighter;
     color: purple;
     border: none;
     border-radius: 24px;
     cursor: pointer;
 }
 
+/* Banner3_Home */
 .banner3_Home {
-    height: 500px;
+    padding: 50px 80px;
+    height: auto;
     background-color: #8b4843;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .banner3_Home p {
+    font-size: 24px;
+    color: #ffcc00;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+  
+  .banner3_Home img {
+    width: 100%; /* Để ảnh không bị méo */
+    height: auto; /* Giữ tỉ lệ ảnh */
+    border-radius: 10px; /* Bo tròn ảnh */
+  }
+  
+  /* containervideo */
+  .main-container-bottom_Home {
+    width: 100%;
     padding: 0 162px;
+    margin: 0 auto;
+  }
+  
+  .main-container-bottom_Home .video-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+  .video-card {
+    perspective: 1000px;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 30%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .video-card img {
+    width: 100%;
+    height: 220px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .video-card:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.08) ;
+  }
+  
+  .video-thumbnail {
+    width: 100%;
+  }
+  
+  .video-title {
+    font-size: 16px;
+    font-weight: bold;
+    /* margin-bottom: 10px; */
+  }
+  .video-description {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  .video-tags {
+    font-size: 12px;
+    color: #888;
+  }
+
+  .btn1 {
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn1 button {
+    height: 40px;
+    width: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    padding: 8px 15px;
+    background-color: rgb(243 230 255);
+    font-weight: lighter;
+    color: purple;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+  }
+
+  .btn3 {
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn3 button {
+    height: 40px;
+    width: 30%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    padding: 8px 15px;
+    background-color: rgb(243 230 255);
+    font-weight: lighter;
+    color: purple;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+  }
+
+.banner4 {
+    width: 100%;
+    background-color: #000;
 }
 
-.banner3_Home img {
-    height: 250px;
-    width: auto;
+.banner4 img {
+    width: 100%;
 }
+
+/* Footer */
+.footer {
+    text-align: center;
+    background-color: #000;
+}
+footer .logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: #b100ff;
+}
+footer .logo span {
+    color: yellow;
+}
+footer .social-icons {
+    margin: 20px 0;
+}
+footer .social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer .social-icons a img {
+    width: 20px;
+    height: 20px;
+}
+footer .info {
+    color: #fff;
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+footer .dmca {
+    margin-top: 15px;
+}
+
